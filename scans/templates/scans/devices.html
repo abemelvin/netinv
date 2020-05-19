@@ -1,0 +1,32 @@
+{% extends "scans/base.html" %}
+
+{% block content %}
+<div class="d-flex p-2 justify-content-center">
+    {% if device_list %}
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">IP Address</th>
+                <th scope="col">Host Name</th>
+                <th scope="col">Device Type</th>
+                <th scope="col">First Seen</th>
+                <th scope="col">Last Seen</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in device_list %}
+            <tr>
+                <th scope="row">{{ device.ip }}</th>
+                <td>{{ device.hostname }}</td>
+                <td>{{ device.device_type }}</td>
+                <td>{{ device.first_seen }}</td>
+                <td>{{ device.last_seen }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No devices in current inventory.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "scans/base.html" %}
+
+{% block content %}
+<div class="d-flex p-2 justify-content-center">
+    {% if scan_list %}
+    <table class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Started</th>
+                <th scope="col">Finished</th>
+                <th scope="col">Requested By</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for scan in scan_list %}
+            <tr>
+                <th scope="row">{{ scan.start_date }}</th>
+                <td>{{ scan.finish_date }}</td>
+                <td>{{ scan.author }}</td>
+                <td>{{ scan.status }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>No existing scans.</p>
+    {% endif %}
+</div>
+{% endblock %}

@@ -3,5 +3,11 @@
 ## Installation
 
 * Clone this repository to your local machine
-* Include Python dependencies in your environment using pip install -r requirements.txt
-* python manage.py runserver
+* Include Python dependencies in your environment using
+```bash
+pip install -r requirements.txt
+```
+* Once environment dependencies are satisifed, bring the local web application online using
+```bash
+python manage.py runserver
+```
